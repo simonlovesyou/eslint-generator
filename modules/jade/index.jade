@@ -1,0 +1,981 @@
+doctype html
+html
+	head 
+		title ESLint-Generator
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+		script(src="https://code.jquery.com/jquery-2.1.4.js")
+		link(rel="stylesheet", href="assets/css/main.css")
+		script(src="assets/js/main.js")
+
+	body
+		.container
+			.row 
+				#rules.col-md-6
+					#ecma
+						.row
+							input(type="checkbox").col-md-1
+							h3 
+								a.active.col-md-11.clearfix.col-md-3 ECMAFeatures
+
+						ul
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b arrowFunctions 
+									| enable arrow functions
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b binaryLiterals 
+									| enable binary literals
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b blockBindings 
+									| enable let and const (aka block bindings)
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b classes 
+									| enable classes
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b defaultParams 
+									| enable default function parameters
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b destructuring 
+									| enable destructuring
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b forOf 
+									| enable for-of loops
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b generators 
+									| enable generators
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b modules 
+									| enable generators
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b objectLiteralComputedProperties 
+									| enable computed object literal property names
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b objectLiteralDuplicateProperties 
+									| enable duplicate object literal properties in strict mode		
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b objectLiteralShorthandMethods 
+									| enable object literal shorthand methods
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b objectLiteralShorthandProperties 
+									| enable object literal shorthand properties
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b regexUFlag 
+									| enable the regular expression u flag
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b regexYFlag 
+									| enable the regular expression y flag
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b restParams 
+									| enable the rest parameters
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b spread 
+									| enable the spread operator for arrays
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b superInFunctions 
+									| enable super references inside of functions
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b templateStrings 
+									| enable template strings
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b globalReturn 
+									| allow return statements in the global scope
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b jsx 
+									| enable JSX
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b experimentalObjectRestSpread 
+									| enable code point escapes
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b unicodeCodePointEscapes 
+									| enable support for the experimental object rest/spread properties 
+									i (IMPORTANT: This is an experimental feature that may change significantly in the future. It's recommended that you do not write rules relying on this functionality unless you are willing to incur maintenance cost when it changes.)												
+								
+					#possibleErrors
+						.row
+							input(type="checkbox").col-md-1
+							h3 
+								a.active.col-md-11.clearfix.col-md-5 Possible Errors
+						ul
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b comma-dangle 
+									| disallow or enforce trailing commas (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-cond-assign 
+									| disallow assignment in conditional expressions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-console 
+									| disallow use of console in the node environment (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-constant-condition 
+									| disallow use of constant expressions in conditions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-control-regex 
+									| disallow control characters in regular expressions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-debugger 
+									| disallow use of debugger (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-dupe-args 
+									| disallow duplicate arguments in functions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-dupe-keys 
+									| disallow duplicate keys when creating object literals (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-duplicate-case 
+									| disallow a duplicate case label. (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-empty-character-class 
+									| disallow the use of empty character classes in regular expressions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-empty 
+									| disallow empty statements (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-ex-assign 
+									| disallow assigning to the exception in a catch block (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-extra-boolean-cast 
+									| disallow double-negation boolean casts in a boolean context (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-extra-parens 
+									| disallow unnecessary parentheses 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-extra-semi 
+									| disallow unnecessary semicolons (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-func-assign 
+									| disallow overwriting functions written as function declarations (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-inner-declarations 
+									| disallow function or variable declarations in nested blocks (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-invalid-regexp 
+									| disallow invalid regular expression strings in the RegExp constructor (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-irregular-whitespace 
+									| disallow irregular whitespace outside of strings and comments (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-negated-in-lhs 
+									| disallow negation of the left operand of an in expression (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-obj-calls 
+									| disallow the use of object properties of the global object (Math and JSON) as functions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-regex-spaces 
+									| disallow multiple spaces in a regular expression literal (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-sparse-arrays 
+									| disallow sparse arrays (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-unreachable 
+									| disallow unreachable statements after a return, throw, continue, or break statement (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b use-isnan 
+									| disallow comparisons with the value NaN (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b valid-jsdoc 
+									| Ensure JSDoc comments are valid 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b valid-typeof 
+									| Ensure that the results of typeof are compared against a valid string (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-unexpected-multiline 
+									| Avoid code that looks like two expressions but is actually one 
+
+					#bestPractices
+						.row
+							input(type="checkbox").col-md-1
+							h3 
+								a.active.col-md-11.clearfix.col-md-5 Best Practices
+						ul
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b comma-dangle 
+									| disallow or enforce trailing commas (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-cond-assign 
+									| disallow assignment in conditional expressions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-console 
+									| disallow use of console in the node environment (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-constant-condition 
+									| disallow use of constant expressions in conditions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-control-regex 
+									| disallow control characters in regular expressions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-debugger 
+									| disallow use of debugger (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-dupe-args 
+									| disallow duplicate arguments in functions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-dupe-keys 
+									| disallow duplicate keys when creating object literals (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-duplicate-case 
+									| disallow a duplicate case label. (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-empty-character-class 
+									| disallow the use of empty character classes in regular expressions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-empty 
+									| disallow empty statements (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-ex-assign 
+									| disallow assigning to the exception in a catch block (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-extra-boolean-cast 
+									| disallow double-negation boolean casts in a boolean context (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-extra-parens 
+									| disallow unnecessary parentheses 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-extra-semi 
+									| disallow unnecessary semicolons (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-func-assign 
+									| disallow overwriting functions written as function declarations (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-inner-declarations 
+									| disallow function or variable declarations in nested blocks (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-invalid-regexp 
+									| disallow invalid regular expression strings in the RegExp constructor (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-irregular-whitespace 
+									| disallow irregular whitespace outside of strings and comments (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-negated-in-lhs 
+									| disallow negation of the left operand of an in expression (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-obj-calls 
+									| disallow the use of object properties of the global object (Math and JSON) as functions (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-regex-spaces 
+									| disallow multiple spaces in a regular expression literal (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-sparse-arrays 
+									| disallow sparse arrays (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-unreachable 
+									| disallow unreachable statements after a return, throw, continue, or break statement (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b use-isnan 
+									| disallow comparisons with the value NaN (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b valid-jsdoc 
+									| Ensure JSDoc comments are valid 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b valid-typeof 
+									| Ensure that the results of typeof are compared against a valid string (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-unexpected-multiline 
+									| Avoid code that looks like two expressions but is actually one"
+					#strict
+						.row
+							input(type="checkbox").col-md-1
+							h3 
+								a.active.col-md-11.clearfix.col-md-5 Strict
+						ul
+							li.row
+								input(type="checkbox").col-md-1
+								p.row.col-md-11 
+									b strict 
+									| control location of Use Strict Directives
+					#variables
+						.row
+							input(type="checkbox").col-md-1
+							h3 
+								a.active.col-md-11.clearfix.col-md-5 Variables
+						ul
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b init-declarations 
+									| enforce or disallow variable initializations at definition 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-catch-shadow 
+									| disallow the catch clause parameter name being the same as a variable in the outer scope 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-delete-var 
+									| disallow deletion of variables (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-label-var 
+									| disallow labels that share a name with a variable 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-shadow-restricted-names 
+									| disallow shadowing of names such as arguments 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-shadow 
+									| disallow declaration of variables already declared in the outer scope 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-undef-init 
+									| disallow use of undefined when initializing variables 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-undef 
+									| disallow use of undeclared variables unless mentioned in a /*global */ block (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-undefined 
+									| disallow use of undefined variable 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-unused-vars 
+									| disallow declaration of variables that are not used in the code (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-use-before-define 
+									| disallow use of variables before they are defined"
+					#nodeJS
+						.row
+							input(type="checkbox").col-md-1
+							h3 
+								a.active.col-md-11.clearfix.col-md-3 Node.js
+						ul
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b callback-return 
+									| enforce return after a callback 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b handle-callback-err 
+									| enforce error handling in callbacks 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-mixed-requires 
+									| disallow mixing regular variable and require declarations 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-new-require 
+									| disallow use of new operator with the require function 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-path-concat 
+									| disallow string concatenation with __dirname and __filename 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-process-exit 
+									| disallow process.exit() 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-restricted-modules 
+									| restrict usage of specified node modules 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-sync 
+									| disallow use of synchronous methods
+									
+					#Stylistic
+						.row
+							input(type="checkbox").col-md-1
+							h3 
+								a.active.col-md-11.clearfix.col-md-3 Stylistic
+						ul
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b array-bracket-spacing 
+									| enforce spacing inside array brackets 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b brace-style 
+									| enforce one true brace style 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b camelcase 
+									| require camel case names 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b comma-spacing 
+									| enforce spacing before and after comma 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b comma-style 
+									| enforce one true comma style 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b computed-property-spacing 
+									| require or disallow padding inside computed properties 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b consistent-this 
+									| enforce consistent naming when capturing the current execution context 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b eol-last 
+									| enforce newline at the end of file, with no multiple empty lines 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b func-names 
+									| require function expressions to have a name 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b func-style 
+									| enforce use of function declarations or expressions 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b id-length 
+									| this option enforces minimum and maximum identifier lengths (variable names, property names etc.) (off by default) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b indent 
+									| specify tab or space width for your code 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b key-spacing 
+									| enforce spacing between keys and values in object literal properties 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b lines-around-comment 
+									| enforce empty lines around comments 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b linebreak-style 
+									| disallow mixed 'LF' and 'CRLF' as linebreaks 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b max-nested-callbacks 
+									| specify the maximum depth callbacks can be nested 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b new-cap 
+									| require a capital letter for constructors 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b new-parens 
+									| disallow the omission of parentheses when invoking a constructor with no arguments 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b newline-after-var 
+									| require or disallow an empty newline after variable declarations 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-array-constructor 
+									| disallow use of the Array constructor 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-continue 
+									| disallow use of the continue statement 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-inline-comments 
+									| disallow comments inline after code 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-lonely-if 
+									| disallow if as the only statement in an else block 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-mixed-spaces-and-tabs 
+									| disallow mixed spaces and tabs for indentation (recommended) 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-multiple-empty-lines 
+									| disallow multiple empty lines 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-nested-ternary 
+									| disallow nested ternary expressions 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-new-object 
+									| disallow the use of the Object constructor 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-spaced-func 
+									| disallow space between function identifier and application 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-ternary 
+									| disallow the use of ternary operators 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-trailing-spaces 
+									| disallow trailing whitespace at the end of lines 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-underscore-dangle 
+									| disallow dangling underscores in identifiers 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-unneeded-ternary 
+									| disallow the use of Boolean literals in conditional expressions 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b object-curly-spacing 
+									| require or disallow padding inside curly braces 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b one-var 
+									| require or disallow one variable declaration per function 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b operator-assignment 
+									| require assignment operator shorthand where possible or prohibit it entirely 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b operator-linebreak 
+									| enforce operators to be placed before or after line breaks 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b padded-blocks 
+									| enforce padding within blocks 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b quote-props 
+									| require quotes around object literal property names 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b quotes 
+									| specify whether backticks, double or single quotes should be used 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b id-match 
+									| require identifiers to match the provided regular expression 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b semi-spacing 
+									| enforce spacing before and after semicolons 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b semi 
+									| require or disallow use of semicolons instead of ASI 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b sort-vars 
+									| sort variables within the same declaration block 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b space-after-keywords 
+									| require a space after certain keywords 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b space-before-blocks 
+									| require or disallow a space before blocks 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b space-before-function-paren 
+									| require or disallow a space before function opening parenthesis 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b space-in-parens 
+									| require or disallow spaces inside parentheses 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b space-infix-ops 
+									| require spaces around operators 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b space-return-throw-case 
+									| require a space after return, throw, and case 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b space-unary-ops 
+									| require or disallow spaces before/after unary operators 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b spaced-comment 
+									| require or disallow a space immediately following the // or /* in a comment 
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b wrap-regex 
+									| require regex literals to be wrapped in parentheses
+					#Legacy
+						.row
+							input(type="checkbox").col-md-1
+							h3 
+								a.active.col-md-11.clearfix.col-md-3 Legacy
+						ul
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b max-depth 
+									| specify the maximum depth that blocks can be nested "
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b max-len 
+									| specify the maximum length of a line in your program 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b max-params 
+									| limits the number of parameters that can be used in the function declaration. 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b max-statements 
+									| specify the maximum number of statement allowed in a function 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-bitwise 
+									| disallow use of bitwise operators 
+
+							li.row
+								input(type='checkbox').col-md-1
+								p.row.col-md-11
+									b no-plusplus 
+									| disallow use of unary operators, ++ and --
+			#output.col-md-6
+			code.col-md-12
+				| lol

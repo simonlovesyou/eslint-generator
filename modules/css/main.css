@@ -1,0 +1,23 @@
+div > .row > input[type="checkbox"]{
+	margin-top: 27px;
+	color:red;
+}
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+ul.active {
+	display:inline-text;
+}
+ul.inactive {
+	display:none;
+}
+
+body > div > div > div > div > div.row {
+	padding-bottom:10px;
+}
+
+code {
+	background-color: grey;
+}
