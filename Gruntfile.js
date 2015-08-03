@@ -2,6 +2,20 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    "babel": {
+      options: {
+        sourceMap: true
+      },
+      dist: {
+        files: [{
+          "expand": true,
+          "cwd": "modules/js/",
+          "src": ["**/*.js"],
+          "dest": "public/assets/js/",
+          "ext": ".js"
+        }]
+      }
+    },
     jade: {
       debug: {
         options: {
@@ -11,7 +25,7 @@ module.exports = function(grunt) {
           pretty: true
         },
         files: {
-          "debug/index.html": "dev/jade/layout.jade",
+          "debug/index.html": "modules/jade/index.jade",
         }
       },
       release: {
@@ -22,7 +36,7 @@ module.exports = function(grunt) {
           pretty: false
         },
         files: {
-          "public/index.html": ["dev/jade/layout.jade"],
+          "public/index.html": ["modules/jade/index.jade"],
         },
         compile: {
           expand: true
@@ -34,12 +48,8 @@ module.exports = function(grunt) {
         separator: ';',
       },
       css: {
-        src: ['dev/css/*.css'],
+        src: ['modules/css/*.css'],
         dest: 'public/assets/css/main.css',
-      },
-      js: {
-        src: ['dev/js/*.js'],
-        dest: 'public/assets/js/index.js'
       }
     },
     cssmin: {
@@ -48,7 +58,7 @@ module.exports = function(grunt) {
         dest: 'public/assets/css/main.min.css'
       }
     },
-    uglify: {
+    /*uglify: {
       js: {
         options: {
           preserveComments: true
@@ -57,15 +67,8 @@ module.exports = function(grunt) {
           'public/assets/js/index.min.js': 'public/assets/js/index.js'
         }
       }
-    },
+    },*/
     watch: {
-      scripts: {
-        files: ['**/*.js'],
-        tasks: ['concat:js', 'uglify:js'],
-        options: {
-          spawn: false,
-        },
-      },
       jade: {
         files: ['**/*.jade'],
         tasks: ['jade'],
@@ -75,12 +78,22 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['**/*.css'],
-        tasks: ['concat:basic', 'concat:extras', 'cssmin:main'],
+        tasks: ['concat:css'],
+        options: {
+          spawn: false,
+        },
+      },
+      babel: {
+        files: ['./modules/js/*.js'],
+        tasks: ['babel'],
         options: {
           spawn: false,
         },
       },
     },
+    eslint: {
+      target: ['./modules/js/*.js']
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jade');
@@ -89,9 +102,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-babel');
 
   grunt.registerTask('default', ['jade:debug', 'jade:release', 'concat:css',
-                      'concat:js', 'uglify:js', 'cssmin:main', 'watch']);
+                     'cssmin:main', 'babel', 'watch']);
 };
 
 /*
